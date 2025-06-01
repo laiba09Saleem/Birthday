@@ -143,14 +143,17 @@ Please make sure to update tests as appropriate.
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-Acknowledgements
+## Acknowledgements
 
 - [Animate.css](https://animate.style/) for wonderful animations
 - [Bootstrap](https://getbootstrap.com/) for responsive layout
 - [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti) for celebration effects
 - All contributors who helped improve this project
 
-Project Maintainer: [Laiba Saleem](https://github.com/your-username)
+---
 
-Special Thanks: To all the birthday celebrants who inspired this project!
+**Project Maintainer**: [Your Name](https://github.com/your-username)
 
+**Special Thanks**: To all the birthday celebrants who inspired this project!
+
+For any questions or support, please open an issue on GitHub.
