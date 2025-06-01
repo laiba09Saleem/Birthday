@@ -1,484 +1,500 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Base Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 15px;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.container {
-    perspective: 1000px;
-    width: 100%;
-    max-width: 100%;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-}
+        .container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
 
-.birthday-card {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    min-height: 400px;
-    aspect-ratio: 5/6;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    background: white;
-    margin: 0 auto;
-}
+        .birthday-card {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            min-height: 400px;
+            aspect-ratio: 5/6;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            background: white;
+            margin: 0 auto;
+        }
 
-.card-cover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: linear-gradient(135deg, #000000, #333333);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    transform: rotateY(0deg);
-    transition: transform 1s;
-    z-index: 2;
-}
+        .card-cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: linear-gradient(135deg, #000000, #333333);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transform: rotateY(0deg);
+            transition: transform 1s;
+            z-index: 2;
+        }
 
-.card-cover h1 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin-bottom: 15px;
-    font-weight: 700;
-    padding: 0 10px;
-}
+        .card-cover h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 15px;
+            font-weight: 700;
+            padding: 0 10px;
+        }
 
-.card-cover p {
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    margin-bottom: 20px;
-    padding: 0 10px;
-}
+        .card-cover p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
 
-.ribbon {
-    width: 100px;
-    height: 100px;
-    background-color: #ff0000;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
+        .ribbon {
+            width: 100px;
+            height: 100px;
+            background-color: #ff0000;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
 
-.card-inside {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: white;
-    color: #333;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 15px;
-    transform: rotateY(180deg);
-    transition: transform 1s;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
+        .card-inside {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: white;
+            color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 15px;
+            transform: rotateY(180deg);
+            transition: transform 1s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-.card-page {
-    width: 100%;
-    height: 100%;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
+        .card-page {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding-bottom: 20px;
+            overflow-y: auto;
+        }
 
-.card-page.active {
-    display: flex;
-}
+        .card-page.active {
+            display: flex;
+        }
 
-.page-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+        .page-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-h2 {
-    text-align: center;
-    font-size: clamp(1.4rem, 4vw, 1.8rem);
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: 700;
-    padding: 0 10px;
-}
+        h2 {
+            text-align: center;
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+            padding: 0 10px;
+        }
 
-.message-box {
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .message-box {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.message-box p {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
+        .message-box p {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
 
-.wishes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
-}
+        .wishes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
-.wish-item {
-    background-color: rgba(0, 0, 0, 0.03);
-    padding: 12px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s;
-    min-height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .wish-item {
+            background-color: rgba(0, 0, 0, 0.03);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.wish-item:hover {
-    transform: translateY(-5px);
-    background-color: rgba(0, 0, 0, 0.05);
-}
+        .wish-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(0, 0, 0, 0.05);
+        }
 
-.wish-icon {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    margin-bottom: 8px;
-}
+        .wish-icon {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            margin-bottom: 8px;
+        }
 
-.next-btn, .celebrate-btn {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: clamp(0.9rem, 3vw, 1rem);
-    cursor: pointer;
-    align-self: center;
-    transition: all 0.3s;
-    margin-top: auto;
-    width: auto;
-    max-width: 200px;
-}
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
 
-.next-btn:hover, .celebrate-btn:hover {
-    background-color: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+        .next-btn, .celebrate-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 20px auto;
+            width: auto;
+            min-width: 150px;
+            display: block;
+            text-align: center;
+        }
 
-.celebrate-btn.hidden {
-    display: none;
-}
+        .next-btn:hover, .celebrate-btn:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-/* Cake Styles */
-.cake-container {
-    position: relative;
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    aspect-ratio: 1/1;
-    margin: 0 auto 20px;
-    cursor: pointer;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
+        .celebrate-btn.hidden {
+            display: none;
+        }
 
-.cake {
-    width: 80%;
-    max-width: 200px;
-    height: 0;
-    padding-bottom: 50%;
-    background: linear-gradient(to bottom, #fff, #f5f5f5);
-    border-radius: 10px 10px 0 0;
-    position: relative;
-    margin: 0 auto;
-    z-index: 2;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
+        /* Cake Styles */
+        .cake-container {
+            position: relative;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            aspect-ratio: 1/1;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
 
-.cake:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(to bottom, #f8c9d1, #f5a3b3);
-    top: -10%;
-    border-radius: 10px 10px 0 0;
-}
+        .cake {
+            width: 80%;
+            max-width: 200px;
+            height: 0;
+            padding-bottom: 50%;
+            background: linear-gradient(to bottom, #fff, #f5f5f5);
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            margin: 0 auto;
+            z-index: 2;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.candle {
-    width: 4%;
-    padding-bottom: 20%;
-    background: linear-gradient(to bottom, #fff, #ddd);
-    position: absolute;
-    top: -20%;
-    border-radius: 3px;
-    z-index: 3;
-}
+        .cake:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            background: linear-gradient(to bottom, #f8c9d1, #f5a3b3);
+            top: -10%;
+            border-radius: 10px 10px 0 0;
+        }
 
-.candle:nth-child(1) { left: 15%; }
-.candle:nth-child(2) { left: 30%; }
-.candle:nth-child(3) { left: 50%; }
-.candle:nth-child(4) { left: 70%; }
-.candle:nth-child(5) { left: 85%; }
+        .candle {
+            width: 4%;
+            padding-bottom: 20%;
+            background: linear-gradient(to bottom, #fff, #ddd);
+            position: absolute;
+            top: -20%;
+            border-radius: 3px;
+            z-index: 3;
+        }
 
-.candle:after {
-    content: '';
-    width: 150%;
-    height: 150%;
-    background: #ff6b00;
-    border-radius: 50%;
-    position: absolute;
-    top: -50%;
-    left: -25%;
-    opacity: 0;
-    box-shadow: 0 0 10px #ff6b00, 0 0 20px #ff6b00;
-    transition: opacity 0.3s;
-}
+        .candle:nth-child(1) { left: 15%; }
+        .candle:nth-child(2) { left: 30%; }
+        .candle:nth-child(3) { left: 50%; }
+        .candle:nth-child(4) { left: 70%; }
+        .candle:nth-child(5) { left: 85%; }
 
-.candle.lit:after {
-    opacity: 1;
-    animation: flicker 0.5s infinite alternate;
-}
+        .candle:after {
+            content: '';
+            width: 150%;
+            height: 150%;
+            background: #ff6b00;
+            border-radius: 50%;
+            position: absolute;
+            top: -50%;
+            left: -25%;
+            opacity: 0;
+            box-shadow: 0 0 10px #ff6b00, 0 0 20px #ff6b00;
+            transition: opacity 0.3s;
+        }
 
-@keyframes flicker {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0.8; transform: scale(1.05); }
-}
+        .candle.lit:after {
+            opacity: 1;
+            animation: flicker 0.5s infinite alternate;
+        }
 
-.cake-base {
-    width: 90%;
-    height: 0;
-    padding-bottom: 10%;
-    background: linear-gradient(to bottom, #e6e6e6, #ccc);
-    border-radius: 50%;
-    position: relative;
-    margin: 0 auto;
-    z-index: 1;
-}
+        @keyframes flicker {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.05); }
+        }
 
-.cake-shadow {
-    width: 90%;
-    height: 0;
-    padding-bottom: 5%;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    position: relative;
-    margin: 0 auto;
-    filter: blur(5px);
-    z-index: 0;
-}
+        .cake-base {
+            width: 90%;
+            height: 0;
+            padding-bottom: 10%;
+            background: linear-gradient(to bottom, #e6e6e6, #ccc);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            z-index: 1;
+        }
 
-.instruction {
-    text-align: center;
-    margin-bottom: 15px;
-    font-style: italic;
-    color: #666;
-    font-size: clamp(0.8rem, 3vw, 1rem);
-}
+        .cake-shadow {
+            width: 90%;
+            height: 0;
+            padding-bottom: 5%;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            filter: blur(5px);
+            z-index: 0;
+        }
 
-/* Celebration Overlay */
-.celebration-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s;
-}
+        .instruction {
+            text-align: center;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #666;
+            font-size: clamp(0.8rem, 3vw, 1rem);
+        }
 
-.celebration-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
+        /* Celebration Overlay */
+        .celebration-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+        }
 
-.celebration-content {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 90%;
-    width: 100%;
-    position: relative;
-    animation: popIn 0.5s;
-    margin: 0 15px;
-}
+        .celebration-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
-@keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
+        .celebration-content {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 90%;
+            width: 100%;
+            position: relative;
+            animation: popIn 0.5s;
+            margin: 0 15px;
+        }
 
-.celebration-content h2 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #ff6b00;
-    margin-bottom: 20px;
-}
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
 
-.emoji-storm {
-    font-size: clamp(1.5rem, 8vw, 3rem);
-    margin: 20px 0;
-    animation: float 3s infinite ease-in-out;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+        .celebration-content h2 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: #ff6b00;
+            margin-bottom: 20px;
+        }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
+        .emoji-storm {
+            font-size: clamp(1.5rem, 8vw, 3rem);
+            margin: 20px 0;
+            animation: float 3s infinite ease-in-out;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
 
-.close-celebration {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: clamp(0.9rem, 3vw, 1rem);
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 15px;
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-.close-celebration:hover {
-    background-color: #000;
-    transform: translateY(-3px);
-}
+        .close-celebration {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
 
-/* Responsive Breakpoints */
-@media (max-width: 768px) {
-    .birthday-card {
-        aspect-ratio: 3/4;
-    }
-    
-    .card-cover, .card-inside {
-        padding: 15px;
-    }
-    
-    .wishes-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .wish-item {
-        min-height: 80px;
-    }
-    
-    .cake {
-        width: 70%;
-        padding-bottom: 60%;
-    }
-}
+        .close-celebration:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+        }
 
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    
-    .birthday-card {
-        aspect-ratio: 2/3;
-        max-width: 100%;
-    }
-    
-    .card-cover h1 {
-        font-size: 1.5rem;
-    }
-    
-    .ribbon {
-        width: 80px;
-        height: 80px;
-        padding-top: 10px;
-        font-size: 0.7rem;
-    }
-    
-    .message-box {
-        padding: 10px;
-    }
-    
-    .cake-container {
-        max-width: 200px;
-    }
-    
-    .celebration-content {
-        padding: 15px;
-    }
-}
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .birthday-card {
+                aspect-ratio: 3/4;
+            }
+            
+            .card-cover, .card-inside {
+                padding: 15px;
+            }
+            
+            .wishes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .wish-item {
+                min-height: 80px;
+            }
+            
+            .cake {
+                width: 70%;
+                padding-bottom: 60%;
+            }
+        }
 
-@media (max-height: 600px) and (orientation: landscape) {
-    .birthday-card {
-        max-height: 90vh;
-        aspect-ratio: 4/3;
-    }
-    
-    .card-cover h1 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-    
-    .card-cover p {
-        margin-bottom: 10px;
-    }
-    
-    .message-box p {
-        font-size: 0.9rem;
-        margin-bottom: 8px;
-    }
-    
-    .wish-item {
-        padding: 8px;
-        min-height: 70px;
-    }
-    
-    .wish-icon {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
-    
-    .next-btn, .celebrate-btn {
-        padding: 8px 15px;
-    }
-}
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .birthday-card {
+                aspect-ratio: 2/3;
+                max-width: 100%;
+            }
+            
+            .card-cover h1 {
+                font-size: 1.5rem;
+            }
+            
+            .ribbon {
+                width: 80px;
+                height: 80px;
+                padding-top: 10px;
+                font-size: 0.7rem;
+            }
+            
+            .message-box {
+                padding: 10px;
+            }
+            
+            .cake-container {
+                max-width: 200px;
+            }
+            
+            .celebration-content {
+                padding: 15px;
+            }
+
+            .next-btn, .celebrate-btn {
+                padding: 10px 20px;
+                min-width: 120px;
+                margin: 15px auto;
+            }
+        }
+
+        @media (max-height: 600px) and (orientation: landscape) {
+            .birthday-card {
+                max-height: 90vh;
+                aspect-ratio: 4/3;
+            }
+            
+            .card-cover h1 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .card-cover p {
+                margin-bottom: 10px;
+            }
+            
+            .message-box p {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+            
+            .wish-item {
+                padding: 8px;
+                min-height: 70px;
+            }
+            
+            .wish-icon {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+            }
+            
+            .next-btn, .celebrate-btn {
+                padding: 8px 15px;
+            }
+        }
