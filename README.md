@@ -1,6 +1,11 @@
-# Birthday Card Web App - Professional README
+# Birthday Card Web App 
 
-![Project Preview](https://laiba09saleem.github.io/Birthday/)
+## Live DEMO
+
+click for view live preview ( https://laiba09saleem.github.io/Birthday/ )
+
+
+![Project Preview](Birthday.png)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
