@@ -1,27 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
 
+/* Base Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     perspective: 1000px;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .birthday-card {
     width: 100%;
     max-width: 500px;
-    height: 600px;
+    height: auto;
+    min-height: 400px;
+    aspect-ratio: 5/6;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     background: white;
+    margin: 0 auto;
 }
 
 .card-cover {
@@ -36,7 +49,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
     cursor: pointer;
     transform: rotateY(0deg);
@@ -45,30 +58,33 @@ body {
 }
 
 .card-cover h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 15px;
     font-weight: 700;
+    padding: 0 10px;
 }
 
 .card-cover p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 20px;
+    padding: 0 10px;
 }
 
 .ribbon {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-color: #ff0000;
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: -5px;
+    right: -5px;
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 20px;
+    padding-top: 15px;
     color: white;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .card-inside {
@@ -78,21 +94,23 @@ body {
     backface-visibility: hidden;
     background: white;
     color: #333;
-    padding: 30px;
+    padding: 20px;
     box-sizing: border-box;
     border-radius: 15px;
     transform: rotateY(180deg);
     transition: transform 1s;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-page {
-    position: absolute;
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
+    width: 100%;
+    height: 100%;
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    flex-grow: 1;
 }
 
 .card-page.active {
@@ -103,21 +121,23 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 h2 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    margin-bottom: 20px;
     color: #333;
     font-weight: 700;
+    padding: 0 10px;
 }
 
 .message-box {
     background-color: rgba(0, 0, 0, 0.05);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -125,24 +145,28 @@ h2 {
 }
 
 .message-box p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
 .wishes-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .wish-item {
     background-color: rgba(0, 0, 0, 0.03);
-    padding: 15px;
+    padding: 12px;
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .wish-item:hover {
@@ -151,21 +175,23 @@ h2 {
 }
 
 .wish-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 8px;
 }
 
 .next-btn, .celebrate-btn {
     background-color: #333;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 10px 20px;
     border-radius: 30px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 3vw, 1rem);
     cursor: pointer;
     align-self: center;
     transition: all 0.3s;
     margin-top: auto;
+    width: auto;
+    max-width: 200px;
 }
 
 .next-btn:hover, .celebrate-btn:hover {
@@ -181,20 +207,27 @@ h2 {
 /* Cake Styles */
 .cake-container {
     position: relative;
-    width: 250px;
-    height: 200px;
-    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: 0 auto 20px;
     cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .cake {
-    width: 200px;
-    height: 100px;
+    width: 80%;
+    max-width: 200px;
+    height: 0;
+    padding-bottom: 50%;
     background: linear-gradient(to bottom, #fff, #f5f5f5);
     border-radius: 10px 10px 0 0;
-    position: absolute;
-    bottom: 40px;
-    left: 25px;
+    position: relative;
+    margin: 0 auto;
     z-index: 2;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -203,37 +236,37 @@ h2 {
     content: '';
     position: absolute;
     width: 100%;
-    height: 20px;
+    height: 20%;
     background: linear-gradient(to bottom, #f8c9d1, #f5a3b3);
-    top: -10px;
+    top: -10%;
     border-radius: 10px 10px 0 0;
 }
 
 .candle {
-    width: 8px;
-    height: 40px;
+    width: 4%;
+    padding-bottom: 20%;
     background: linear-gradient(to bottom, #fff, #ddd);
     position: absolute;
-    top: -40px;
+    top: -20%;
     border-radius: 3px;
     z-index: 3;
 }
 
-.candle:nth-child(1) { left: 30px; }
-.candle:nth-child(2) { left: 60px; }
-.candle:nth-child(3) { left: 100px; }
-.candle:nth-child(4) { left: 140px; }
-.candle:nth-child(5) { left: 170px; }
+.candle:nth-child(1) { left: 15%; }
+.candle:nth-child(2) { left: 30%; }
+.candle:nth-child(3) { left: 50%; }
+.candle:nth-child(4) { left: 70%; }
+.candle:nth-child(5) { left: 85%; }
 
 .candle:after {
     content: '';
-    width: 12px;
-    height: 12px;
+    width: 150%;
+    height: 150%;
     background: #ff6b00;
     border-radius: 50%;
     position: absolute;
-    top: -6px;
-    left: -2px;
+    top: -50%;
+    left: -25%;
     opacity: 0;
     box-shadow: 0 0 10px #ff6b00, 0 0 20px #ff6b00;
     transition: opacity 0.3s;
@@ -250,33 +283,34 @@ h2 {
 }
 
 .cake-base {
-    width: 220px;
-    height: 20px;
+    width: 90%;
+    height: 0;
+    padding-bottom: 10%;
     background: linear-gradient(to bottom, #e6e6e6, #ccc);
     border-radius: 50%;
-    position: absolute;
-    bottom: 20px;
-    left: 15px;
+    position: relative;
+    margin: 0 auto;
     z-index: 1;
 }
 
 .cake-shadow {
-    width: 220px;
-    height: 10px;
+    width: 90%;
+    height: 0;
+    padding-bottom: 5%;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    position: absolute;
-    bottom: 10px;
-    left: 15px;
+    position: relative;
+    margin: 0 auto;
     filter: blur(5px);
     z-index: 0;
 }
 
 .instruction {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-style: italic;
     color: #666;
+    font-size: clamp(0.8rem, 3vw, 1rem);
 }
 
 /* Celebration Overlay */
@@ -303,13 +337,14 @@ h2 {
 
 .celebration-content {
     background: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 15px;
     text-align: center;
-    max-width: 500px;
-    width: 90%;
+    max-width: 90%;
+    width: 100%;
     position: relative;
     animation: popIn 0.5s;
+    margin: 0 15px;
 }
 
 @keyframes popIn {
@@ -318,31 +353,36 @@ h2 {
 }
 
 .celebration-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     color: #ff6b00;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .emoji-storm {
-    font-size: 3rem;
-    margin: 30px 0;
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    margin: 20px 0;
     animation: float 3s infinite ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-10px); }
 }
 
 .close-celebration {
     background-color: #333;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 10px 20px;
     border-radius: 30px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 3vw, 1rem);
     cursor: pointer;
     transition: all 0.3s;
+    margin-top: 15px;
 }
 
 .close-celebration:hover {
@@ -350,21 +390,95 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* Responsive Design */
-@media (max-width: 576px) {
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
     .birthday-card {
-        height: 500px;
+        aspect-ratio: 3/4;
     }
     
-    h2 {
-        font-size: 1.5rem;
+    .card-cover, .card-inside {
+        padding: 15px;
     }
     
     .wishes-grid {
         grid-template-columns: 1fr;
     }
     
+    .wish-item {
+        min-height: 80px;
+    }
+    
+    .cake {
+        width: 70%;
+        padding-bottom: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .birthday-card {
+        aspect-ratio: 2/3;
+        max-width: 100%;
+    }
+    
+    .card-cover h1 {
+        font-size: 1.5rem;
+    }
+    
+    .ribbon {
+        width: 80px;
+        height: 80px;
+        padding-top: 10px;
+        font-size: 0.7rem;
+    }
+    
+    .message-box {
+        padding: 10px;
+    }
+    
     .cake-container {
-        transform: scale(0.8);
+        max-width: 200px;
+    }
+    
+    .celebration-content {
+        padding: 15px;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .birthday-card {
+        max-height: 90vh;
+        aspect-ratio: 4/3;
+    }
+    
+    .card-cover h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .card-cover p {
+        margin-bottom: 10px;
+    }
+    
+    .message-box p {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .wish-item {
+        padding: 8px;
+        min-height: 70px;
+    }
+    
+    .wish-icon {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    
+    .next-btn, .celebrate-btn {
+        padding: 8px 15px;
     }
 }
