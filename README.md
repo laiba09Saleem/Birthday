@@ -1,6 +1,6 @@
 # Birthday Card Web App - Professional README
 
-![Project Preview](https://i.imgur.com/JQZ1x8l.gif)
+![Project Preview](Birthday.png)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
