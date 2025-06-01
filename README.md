@@ -57,21 +57,21 @@ This is an elegant, interactive birthday card web application built with modern 
 To run this project locally, follow these steps:
 
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/birthday-card.git
+   
+   https://github.com/laiba09Saleem/Birthday.git
    cd birthday-card
-   ```
+   
 
-2. **Install live server (optional)**:
+3. **Install live server (optional)**:
    If you don't have a local server, you can install one with npm:
-   ```bash
-   npm install -g live-server
-   ```
 
-3. **Run the project**:
-   ```bash
+   npm install -g live-server
+
+
+4. **Run the project**:
+   
    live-server
-   ```
+ 
    This will automatically open the project in your default browser.
 
 ## Usage
@@ -119,7 +119,7 @@ You can easily personalize this card for different recipients:
 2. Push your code to the main branch
 3. Go to Settings > Pages
 4. Select "main" branch and "/ (root)" folder
-5. Click "Save" - your site will be live at `https://username.github.io/repository-name`
+5. Click "Save" - your site will be live at `https://github.com/laiba09Saleem/Birthday.git`
 
 ### Netlify Deployment
 
@@ -150,9 +150,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti) for celebration effects
 - All contributors who helped improve this project
 
----
 
-**Project Maintainer**: [Your Name](https://github.com/your-username)
+**Project Maintainer**: [Laiba Saleem](https://github.com/laiba09Saleem/Birthday.git)
 
 **Special Thanks**: To all the birthday celebrants who inspired this project!
 
